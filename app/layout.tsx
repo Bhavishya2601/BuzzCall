@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Manrope } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -24,11 +25,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body
-          className={`${manrope.variable} antialiased bg-slate-800 text-white`}
-        >
+        <body className={`${manrope.variable} antialiased select-none`}>
           <Header />
           {children}
+          <Footer />
           <Analytics />
         </body>
       </html>
